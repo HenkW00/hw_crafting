@@ -6,7 +6,7 @@ ui_page 'html/ui.html'
 
 author 'HenkW'
 description 'Simple crafting system'
-version '1.2.6'
+version '1.2.7'
 
 
 client_scripts {

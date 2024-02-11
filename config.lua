@@ -4,6 +4,8 @@ Crafting.DiscordWebhook = "https://discord.com/api/webhooks/1204148986517262410/
 
 Crafting.Debug = true -- for debugging
 
+Crafting.checkForUpdates = true 
+
 -- You can configure locations here
 Crafting.Locations = {
     [1] = {x = 1015.003, y = -3158.878, z = -38.907},
