@@ -6,7 +6,7 @@ ui_page 'html/ui.html'
 
 author 'HenkW'
 description 'Simple crafting system'
-version '1.2.2'
+version '1.2.5'
 
 
 client_scripts {
@@ -25,11 +25,6 @@ files {
     'html/ui.html',
     'html/css/main.css',
     'html/js/app.js',
-}
-
-escrow_ignore {
-    'config.lua',
-    'fxmanifest.lua',
 }
 
 shared_script '@es_extended/imports.lua'

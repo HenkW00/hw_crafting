@@ -1,4 +1,0 @@
-Update 1.2.2
-
-- Added debug function
-- Changed start/stop console message.
