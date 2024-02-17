@@ -40,7 +40,7 @@ AddEventHandler('hw_crafting:CraftingSuccess', function(CraftItem)
     TriggerClientEvent('esx:showNotification', src, "You have made ~b~"..item.label.."~w~!")
 
     if Crafting.Debug then
-        print("^0[^1DEBUG^0] A player crafted an item")
+        print("^0[^1DEBUG^0] A player crafted: ^3" .. item.label)
     end
 
 end)
