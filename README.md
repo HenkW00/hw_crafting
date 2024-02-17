@@ -8,7 +8,8 @@ This is a simple script for crafting with discord logging
 - HW Development | HenkW
 
 **Changelog:**
-- Changed version support
+- Cleaned code
+- Added debug prints
 
 🛠 **Requirements**
 - ESX Server

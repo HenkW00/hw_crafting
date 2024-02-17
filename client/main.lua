@@ -11,7 +11,7 @@ local Keys = {
 ESX = exports["es_extended"]:getSharedObject()
 
 local CurrentCraft = nil
--- Location Loop
+
 Citizen.CreateThread(function()
     while true do
         Citizen.Wait(7)
@@ -29,20 +29,26 @@ Citizen.CreateThread(function()
     end
 end)
 
--- NUI that get triggered on success
+
 RegisterNUICallback('CraftingSuccess', function()
     SetNuiFocus(false, false)
     ClearPedTasks(GetPlayerPed(-1))
     FreezeEntityPosition(GetPlayerPed(-1),false)
     TriggerServerEvent("hw_crafting:CraftingSuccess", CurrentCraft)
+    if Crafting.Debug then
+        print("^0[^1DEBUG^0] A player crafted an item")
+    end
 end)
 
--- NUI that get triggered on fail
+
 RegisterNUICallback('CraftingFailed', function()
     SetNuiFocus(false, false)
     ClearPedTasks(GetPlayerPed(-1))
     FreezeEntityPosition(GetPlayerPed(-1),false)
     TriggerServerEvent("hw_crafting:CraftingFailed", CurrentCraft)
+    if Crafting.Debug then
+        print("^0[^1DEBUG^0] A player failed to craft an item")
+    end
 end)
 
 function OpenCraftMenu()
@@ -72,6 +78,9 @@ function OpenCraftMenu()
             CurrentCraft = data.current.value
             ESX.TriggerServerCallback('hw_crafting:HasTheItems', function(result)
                 if result then
+                    if Crafting.Debug then
+                        print("^0[^1DEBUG^0] test - start craft")
+                    end
                     SetNuiFocus(true,true)
                     SendNUIMessage({
                         action = "opengame",
@@ -84,6 +93,9 @@ function OpenCraftMenu()
                     FreezeEntityPosition(GetPlayerPed(-1),true)
                 else
                     ESX.ShowNotification("~r~Je hebt niet genoeg materieel")
+                    if Crafting.Debug then
+                        print("^0[^1DEBUG^0] A player tried to craft a item but hasnt enough material")
+                    end
                     
                 end
             end, CurrentCraft)

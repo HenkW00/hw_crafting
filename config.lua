@@ -2,9 +2,9 @@ Crafting = {}
 
 Crafting.DiscordWebhook = "https://discord.com/api/webhooks/1204148986517262410/N5BGTaRnFBU4pw_paJaMIAtnSKmpRJEu86Lry3DbluJ1pyVX8HC_PHgpqpf6LBNJ7AqW"
 
-Crafting.Debug = true -- for debugging
+Crafting.Debug = true -- For debugging
 
-Crafting.checkForUpdates = true 
+Crafting.checkForUpdates = true -- Recommended to leave on 'true'
 
 -- You can configure locations here
 Crafting.Locations = {
