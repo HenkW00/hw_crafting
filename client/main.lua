@@ -78,9 +78,6 @@ function OpenCraftMenu()
             CurrentCraft = data.current.value
             ESX.TriggerServerCallback('hw_crafting:HasTheItems', function(result)
                 if result then
-                    if Crafting.Debug then
-                        print("^0[^1DEBUG^0] test - start craft")
-                    end
                     SetNuiFocus(true,true)
                     SendNUIMessage({
                         action = "opengame",
