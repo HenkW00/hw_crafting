@@ -18,7 +18,7 @@ function SendDiscordLog(message)
 
         PerformHttpRequest(webhook, function(err, text, headers) end, 'POST', json.encode({embeds = embeds}), { ['Content-Type'] = 'application/json' })
     else
-        print("Discord webhook URL is not configured.")
+        print("^0[^1ERROR^0] ^5Discord webhook URL is ^1not^5 configured.^0")
     end
 end
 
@@ -37,10 +37,10 @@ AddEventHandler('hw_crafting:CraftingSuccess', function(CraftItem)
         xPlayer.addInventoryItem(CraftItem, 1)
     end
     SendDiscordLog(xPlayer.getName() .. " has successfully crafted " .. item.label)
-    TriggerClientEvent('esx:showNotification', src, "You have made ~b~"..item.label.."~w~!")
+    TriggerClientEvent('esx:showNotification', src, "~y~You have made ~b~"..item.label)
 
     if Crafting.Debug then
-        print("^0[^1DEBUG^0] A player crafted: ^3" .. item.label)
+        print("^0[^1DEBUG^0] ^5Player: ^3" .. src .. "^5 crafted the following item: ^3" .. item.label)
     end
 
 end)
@@ -60,7 +60,7 @@ AddEventHandler('hw_crafting:CraftingFailed', function(CraftItem)
     TriggerClientEvent('esx:showNotification', src, "~r~It failed to make ~b~"..item.label)
 
     if Crafting.Debug then
-        print("^7[^1DEBUG^7] A player failed crafting an item")
+        print("^0[^1DEBUG^0] ^5Player: ^3" .. src .. "^5 failed crafting item: ^3" ..item.label)
     end
 
 end)

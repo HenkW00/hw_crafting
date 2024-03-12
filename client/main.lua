@@ -36,7 +36,7 @@ RegisterNUICallback('CraftingSuccess', function()
     FreezeEntityPosition(GetPlayerPed(-1),false)
     TriggerServerEvent("hw_crafting:CraftingSuccess", CurrentCraft)
     if Crafting.Debug then
-        print("^0[^1DEBUG^0] A player crafted an item")
+        print("^0[^1DEBUG^0] ^5Succesfull crafting!")
     end
 end)
 
@@ -47,7 +47,7 @@ RegisterNUICallback('CraftingFailed', function()
     FreezeEntityPosition(GetPlayerPed(-1),false)
     TriggerServerEvent("hw_crafting:CraftingFailed", CurrentCraft)
     if Crafting.Debug then
-        print("^0[^1DEBUG^0] A player failed to craft an item")
+        print("^0[^1DEBUG^0] ^5Failed crafting!")
     end
 end)
 
@@ -91,7 +91,7 @@ function OpenCraftMenu()
                 else
                     ESX.ShowNotification("~r~Je hebt niet genoeg materieel")
                     if Crafting.Debug then
-                        print("^0[^1DEBUG^0] A player tried to craft a item but hasnt enough material")
+                        print("^0[^1DEBUG^0] ^5A player tried to craft a item but hasnt enough materials!^0")
                     end
                     
                 end
@@ -111,11 +111,9 @@ DrawText3D = function(x, y, z, text)
 	SetTextEntry("STRING")
 	SetTextCentre(true)
 	AddTextComponentString(text)
-	--DrawText(_x,_y)
 	SetDrawOrigin(x,y,z, 0)
 	DrawText(0.0, 0.0)
 	local factor = (string.len(text)) / 370
-	--DrawRect(_x,_y+0.0125, 0.017+ factor, 0.03, 0, 0, 0, 68)
 	DrawRect(0.0, 0.0+0.0125, 0.017+ factor, 0.03, 0, 0, 0, 68)
 	ClearDrawOrigin()
 end
