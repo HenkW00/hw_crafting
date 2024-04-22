@@ -1,7 +1,7 @@
 local curVersion = GetResourceMetadata(GetCurrentResourceName(), "version")
 local resourceName = "hw_crafting"
 
-if Config.checkForUpdates then
+if Crafting.checkForUpdates then
     CreateThread(function()
         if GetCurrentResourceName() ~= "hw_crafting" then
             resourceName = "hw_crafting (" .. GetCurrentResourceName() .. ")"
